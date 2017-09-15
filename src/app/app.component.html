@@ -1,0 +1,36 @@
+    <h1>Front End Exam</h1>
+    
+    <h2>Add User</h2>
+    <div class="input">
+         <input type="text" name="" value="" placeholder="Name" [(ngModel)]="api.newUser.name">
+        <input type="email" name="email" value="" placeholder="Email" [(ngModel)]="api.newUser.email">
+        <input type="text" name="" value="" placeholder="Address" [(ngModel)]="api.newUser.address">
+        <input type="number" name="" value="" placeholder="Phone Number" [(ngModel)]="api.newUser.phoneNumber"><br>  
+        <button type="" (click)="api.AddUser()">Add User</button> 
+    </div>
+
+    <div class="container">
+    <h2>List User</h2>
+    <div class="data">
+    <table>
+    <tr>
+      <th>ID</th>
+      <th>Nama</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>Phone Number</th>
+      <th>Action</th>
+    </tr>
+     <tr *ngFor="let u of api.UserList">
+      <td> {{ u.id }} </td>
+      <td> {{ u.name }} </td>
+      <td> {{ u.email }} </td>
+      <td> {{ u.address }} </td>
+      <td> {{ u.phoneNumber }} </td>
+      <td>
+        <button type="button" class="btn btn-danger" (click)="api.DeleteUser(u.id)" >Delete</button>
+      </td>
+    </tr> 
+    </table>        
+    </div>        
+    </div>
